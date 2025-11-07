@@ -21,6 +21,14 @@ class MenuItem(models.Model):
     def __str__(self):
         return self.title
     
+class Booking(models.Model):
+    name = models.CharField(max_length=255)
+    no_of_guests = models.SmallIntegerField(default=6)
+    booking_date = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f'Booking by {self.name} for {self.no_of_guests} guests on {self.booking_date}'
+
 class Cart(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     menu_item = models.ForeignKey(MenuItem,on_delete=models.CASCADE)
