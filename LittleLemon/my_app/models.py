@@ -24,7 +24,7 @@ class MenuItem(models.Model):
 class Booking(models.Model):
     name = models.CharField(max_length=255)
     no_of_guests = models.SmallIntegerField(default=6)
-    booking_date = models.DateTimeField(auto_now_add=True)
+    booking_date = models.DateTimeField()
     
     def __str__(self):
         return f'Booking by {self.name} for {self.no_of_guests} guests on {self.booking_date}'
