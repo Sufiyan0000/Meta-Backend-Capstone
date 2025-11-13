@@ -28,4 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include('my_app.urls')),
     path('resturant/booking/',include(router.urls)),
+
+    # djoser urls
+    path('auth/',include('djoser.urls')),
+    path('auth/',include('djoser.urls.authtoken')),
 ]
